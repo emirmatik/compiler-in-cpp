@@ -101,8 +101,8 @@ string checkCalculation(string str, map<string,string>&vars)
     // paranthese priority
     int index = str.find("(");
     while (index != string::npos) {
-        int index2 = str.find(")", index+1);
-        str.replace(index, index2-index+1, checkCalculation(str.substr(index+1,index2-index-2), vars));
+        int index2 = str.rfind(")");
+        str.replace(index, index2-index+1, checkCalculation(str.substr(index+1,index2-index-1), vars));
         index = str.find(str, index+1);
     }
     // continue calculation without parantheses
