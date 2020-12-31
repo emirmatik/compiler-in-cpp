@@ -32,6 +32,6 @@ Simple Compiler of an arbitrary language made in C ++
   LOOP VARIABLE_NAME = VARIABLE_NAME + 5 TIMES COUNT <br/><br/>
   <b>Example:<b/> LOOP C = C + A * B TIMES 15 <br/>
   
-  - ### OUTPUT 
+- ### OUTPUT 
   OUT VARIABLE_NAME <br/><br/>
   <b>Example:<b/> OUT B
