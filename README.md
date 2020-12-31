@@ -9,14 +9,14 @@
 
 <hr/>
 
-### Input / Language Syntax
+## Input / Language Syntax
 
 - ### Variable Assignment <br/>
   VARIABLE_NAME = VALUE <br/>
   <b>Example:<b/> A = 5
   
 - ### Math
-  "-" , + , * , /  <br/>
+  + , - , * , /  <br/>
   <b>Example:<b/> A * B - 13 + 75
 
 - ### IF-ELSE STATEMENT
