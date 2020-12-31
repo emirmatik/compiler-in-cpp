@@ -12,17 +12,17 @@
 ### Input / Language Syntax
 
 - ### Variable Assignment <br/>
-  <VARIABLE_NAME> = <VALUE> <br/>
+  VARIABLE_NAME = VALUE <br/>
   <b>Example:<b/> A = 5
   
 - ### Math
-  - , + , * , /  <br/>
+  "-" , + , * , /  <br/>
   <b>Example:<b/> A * B - 13 + 75
 
 - ### IF-ELSE STATEMENT
-  IF <CONDITION> THEN <OUTPUT1> ELSE <OUTPUT2> <br/>
+  IF CONDITION THEN OUTPUT1 ELSE OUTPUT2 <br/>
   <b>Example:<b/> C = IF (A + B) < 15 THEN A ELSE 25 <br/>
                                  
 - ### FOR STATEMENT 
-  LOOP <VARIABLE_NAME> = <VARIABLE_NAME> + 5 TIMES <COUNT>
+  LOOP VARIABLE_NAME = VARIABLE_NAME + 5 TIMES COUNT
   <b>Example:<b/> LOOP C = C + A * B TIMES 15
