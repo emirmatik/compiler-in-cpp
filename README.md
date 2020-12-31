@@ -1,9 +1,11 @@
 # Compiler in C++
 
-Simple Compiler of an arbitrary language made in C ++
+Simple Compiler of an arbitrary language made in C ++ <br/>
+You can try with some random examples I've uploaded and then you can try with your own inputs!! <br/> 
 
 **Note: Do not forget to write your file name as the input source in main section** <br/>
-**Note2: You need to store your all operations in a variable. Because it outputs only variables currently. (Will be changed)**
+**Note2: The input file should be in the same directory with .exe** <br/>
+**Note3: You need to store your all operations in a variable. Because it outputs only variables currently. (Will be changed)**
 
 ## Abilities of the Compiler
 - Understands variable assignments.
