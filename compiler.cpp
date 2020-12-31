@@ -15,7 +15,7 @@ using namespace std;
      //            /  \
      //          A     *
      //              /   \
-     //             C    D
+     //             C     D
      //
 
 string checkCalculation(string str, map<string,string>&vars);
@@ -165,7 +165,7 @@ int main() {
 
     //read and process the input
     ifstream mytext;
-    mytext.open("Challange9.inp");
+    mytext.open("<file name>.inp");
     while (getline(mytext,str)) {
         if (checkOutput(str)) break;
         checkVariable(str, vars);
@@ -182,7 +182,7 @@ int main() {
     auto output = vars[trimString(str.substr(str.find("OUT")+3))];
     cout << "output : " << output << endl; // log the output
     ofstream ofile;
-    ofile.open("ChallengeOutput.out");
+    ofile.open("output.out");
     ofile << output;
     ofile.close();
 
@@ -190,16 +190,5 @@ int main() {
 
     return 0;
 }
-
-// Challenge #1  - OK
-// Challenge #2  - OK
-// Challenge #3  - OK
-// Challenge #4  - OK
-// Challenge #5  - OK
-// Challenge #6  - OK
-// Challenge #7  - OK
-// Challenge #8  - OK
-// Challenge #9  - OK
-// Challenge #10  - OK
 
 // time: 3 days
