@@ -164,14 +164,14 @@ int main() {
     string str;
 
     //read and process the input
-    ifstream mytext;
-    mytext.open("<file name>.inp");
-    while (getline(mytext,str)) {
+    ifstream input;
+    input.open("<file name>.inp");
+    while (getline(input,str)) {
         if (checkOutput(str)) break;
         checkVariable(str, vars);
         // checkIfElse(str, vars);
     }
-    mytext.close();
+    input.close();
 
     // checking if i get the vars correctly
     // for (auto a : vars) {
