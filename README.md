@@ -2,7 +2,7 @@
 
 Simple Compiler of an arbitrary language made in C ++
 
-**Note: Do not forget to write your file name as the input source in main section**
+**Note: Do not forget to write your file name as the input source in main section** <br/>
 **Note2: You need to store your all operations in a variable. Because it outputs only variables currently. (Will be changed)**
 
 ## Abilities of the Compiler
