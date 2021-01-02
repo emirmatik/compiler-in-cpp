@@ -19,6 +19,7 @@ using namespace std;
      //
 
 string checkCalculation(string str, map<string,string>&vars);
+string checkIfElse(string str, map<string,string>&vars);
 
 // remove all white spaces
 string trimString(string s) {
@@ -48,7 +49,7 @@ string checkLoop(string str, map<string,string> &vars, string key) {
     string left = trimString(str.substr(0,index));
     int count = stoi(trimString(str.substr(index+5)));
     for (int i = 0; i < count; ++i) {
-        vars[key] = checkCalculation(left, vars);
+        vars[key] = str.find("IF") != string::npos ? checkIfElse(left, vars) : checkCalculation(left, vars);
     } return "";
 }
 
@@ -58,10 +59,13 @@ string checkIfElse(string str, map<string,string> &vars) {
     int index2 = str.find("THEN",index+1);
     int index3 = str.find("ELSE",index2+1);
 
-    string condition = trimString(str.substr(index+2,index2 - 4));
+    string condition = trimString(str.substr(index+2,index2 - index - 2));
     string ifRes = trimString(str.substr(index2+4,index3 - index2 - index-4));
     string elseRes = trimString(str.substr(index3+4));
     string left,right,op = ">=";
+
+    ifRes = includesOperator(ifRes) ? checkCalculation(ifRes, vars) : vars[ifRes];
+    elseRes = includesOperator(elseRes) ? checkCalculation(elseRes, vars) : vars[elseRes];
 
     // find the operator
     index = condition.find(">=");
@@ -75,7 +79,6 @@ string checkIfElse(string str, map<string,string> &vars) {
         string left_side = trimString(condition.substr(0,index)); 
         string right_side = trimString(condition.substr(index+op.size()));
 
-
         if (vars.find(left_side) != vars.end()) left = vars[left_side];
         else if (includesOperator(left_side)) left = checkCalculation(left_side, vars);
         else left = left_side;
@@ -83,12 +86,12 @@ string checkIfElse(string str, map<string,string> &vars) {
         else if (includesOperator(right_side)) right = checkCalculation(right_side, vars);
         else right = right_side;
 
-        if (op == ">") return (stod(left) > stod(right) ? vars[ifRes] : vars[elseRes]);
-        else if (op == "<") return stod(left) < stod(right) ? vars[ifRes] : vars[elseRes];
-        else if (op == "<=") return stod(left) <= stod(right) ? vars[ifRes] : vars[elseRes];
-        else if (op == ">=") return stod(left) >= stod(right) ? vars[ifRes] : vars[elseRes];
-        else if (op == "==") return stod(left) == stod(right) ? vars[ifRes] : vars[elseRes];
-        else if (op == "!=") return stod(left) != stod(right) ? vars[ifRes] : vars[elseRes];
+        if (op == ">") return (stod(left) > stod(right) ? ifRes : elseRes);
+        else if (op == "<") return stod(left) < stod(right) ? ifRes : elseRes;
+        else if (op == "<=") return stod(left) <= stod(right) ? ifRes : elseRes;
+        else if (op == ">=") return stod(left) >= stod(right) ? ifRes : elseRes;
+        else if (op == "==") return stod(left) == stod(right) ? ifRes : elseRes;
+        else if (op == "!=") return stod(left) != stod(right) ? ifRes : elseRes;
     } return "";
 }
 
